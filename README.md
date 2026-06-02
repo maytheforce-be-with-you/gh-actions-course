@@ -1,2 +1,1 @@
-# gh-actions-course
-github actions course
+this is the read me file
