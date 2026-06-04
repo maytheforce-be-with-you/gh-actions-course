@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, synchronized]
     branches:
-      -main
+      - main
 
 jobs:
   echo:
