@@ -7,7 +7,7 @@ on:
 
 jobs:
   echo:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Step one
         run: echo "This is ran due to PR is opened or synchronized and if main is merged"
