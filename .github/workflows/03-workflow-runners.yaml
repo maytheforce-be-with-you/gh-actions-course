@@ -7,8 +7,8 @@ jobs:
     steps: 
       - name: Show OS
         runs: |
-        echo "This job is running on ubuntu runner"
-        echo "Os runner is ${{github_runnerOS}}"
+          echo "This job is running on ubuntu runner"
+          echo "Os runner is ${{github_runnerOS}}"
   
   windows-echo:
     runs-on: windows-latest
