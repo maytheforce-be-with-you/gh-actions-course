@@ -8,8 +8,13 @@ jobs:
     steps: 
       - name: Check-out code
         uses: actions/checkout@v4
-      - name: print the folders
-        run: ls
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: 04-create-actions/react-app
         #dep
         #check out 
         
