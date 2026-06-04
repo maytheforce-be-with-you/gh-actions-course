@@ -1,0 +1,13 @@
+name: 05 Event filter and Activity Type
+on: 
+  pull_request:
+    types: [opened, synchronized]
+    branches:
+      -main
+
+jobs:
+  echo:
+    run-on: ubuntu-latest
+    steps:
+      - name: Step one
+        run: echo "This is ran due to PR is opened or synchronized and if main is merged"
