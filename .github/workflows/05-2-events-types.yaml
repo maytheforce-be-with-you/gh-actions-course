@@ -1,8 +1,9 @@
 name: 05 2 Events and types
 on:
-  types: [closed]
-  branches:
-    - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
 
 jobs: 
   echo:
