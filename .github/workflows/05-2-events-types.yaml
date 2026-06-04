@@ -1,0 +1,12 @@
+name: 05 2 Events and types
+on:
+  types: [closed]
+  branches:
+    - main
+
+jobs: 
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step one
+        run: echo "This PR runs only when its closed" 
