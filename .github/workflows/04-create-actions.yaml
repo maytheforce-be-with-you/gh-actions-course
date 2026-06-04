@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    default:
+    defaults:
       run:
         working-directory: 04-create-actions/react-app
     steps: 
