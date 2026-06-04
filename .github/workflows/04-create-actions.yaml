@@ -1,6 +1,6 @@
 name: 04 Create Actions
 
-on: workflow-dispatch
+on: workflow_dispatch
 
 jobs:
   build:
