@@ -4,6 +4,9 @@ on:
     workflow_dispatch:
     pull_request:
 
+run-name: My custom workflow run name $RUNNNER.OS
+
+
 jobs:
   echo-data:  
     runs-on: ubuntu-latest
