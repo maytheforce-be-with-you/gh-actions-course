@@ -1,0 +1,21 @@
+name: 06 Contexts
+
+on: 
+    workflow_dispatch:
+    pull_request:
+
+jobs:
+  echo-data:  
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Display Infromation
+        run: |
+          echo "Event name is ${{github.event_name}}"
+          echo "Ref ${{github.ref}}"
+          echo "SHA ${{github.sha}}"
+          echo "Actor ${{github.Actor}}"
+          echo "Workflow ${{github.Workflow}}"
+          echo "Run ID ${{github.run_id}}"
+          echo "Run number ${{github.run_number}}"
+
+
