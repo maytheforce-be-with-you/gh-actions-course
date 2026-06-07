@@ -13,7 +13,7 @@ jobs:
           run: |
            cat << EOF
             ${{ toJSON(github.pull_request.labels)}}
-            EOF
+           EOF
         - name: bug step
           if: ${{ !cancelled() && contains(github.event.pull_request.title, 'fix')}}
           run: echo "I am a fix"
