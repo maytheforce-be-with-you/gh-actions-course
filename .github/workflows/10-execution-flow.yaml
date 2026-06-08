@@ -26,7 +26,7 @@ jobs:
           - unit-test
       steps: 
       - name: deploying to non-prod
-      run: echo "deploying to non-prod"
+        run: echo "deploying to non-prod"
   e2e-tests: 
       runs-on: ubuntu-latest
       needs:  
