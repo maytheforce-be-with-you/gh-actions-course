@@ -24,16 +24,20 @@ jobs:
       needs: 
           - lint-build
           - unit-test
+      steps: 
+      - name: deploying to non-prod
       run: echo "deploying to non-prod"
   e2e-tests: 
       runs-on: ubuntu-latest
-      needs:  deploy-nonprod
+      needs:  
+        - deploy-nonprod
       steps:
         - name: E2e tests
           run: echo "Running e2e tests"
   load-tests:
       runs-on: ubuntu-latest
-      needs: deploy-nonprod
+      needs: 
+        - deploy-nonprod
       steps: 
         - name: running load tests
           run: echo "running load tests"
