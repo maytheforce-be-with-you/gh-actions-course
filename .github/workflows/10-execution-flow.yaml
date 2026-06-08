@@ -1,0 +1,48 @@
+name: 10 execution flow
+on: 
+  workflow_dispatch:
+     inputs: 
+       pass-unit-tests:
+         type: boolean   
+         default: false 
+jobs:
+  lint-build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Lint and build
+          run: echo "linting and building project"
+  unit-test: 
+    runs-on: ubuntu-latest
+    steps:
+        - name: running unit tests
+          run: echo "running unit tests"
+        - name: failing tests
+          if: ${{ inputs.pass-unit-tests == 'false' }}
+          run: exit 1
+  deploy-nonprod:
+      runs-on: ubuntu-latest
+      job: lint-build
+           unit-test
+      run: echo "deploying to non-prod"
+  e2e-tests: 
+      runs-on: ubuntu-latest
+      job: deploy-nonprod
+      steps:
+        - name: E2e tests
+          run: echo "Running e2e tests"
+  load-tests:
+      runs-on: ubuntu-latest
+      job: deploy-nonprod
+      steps: 
+        - name: running load tests
+          run: echo "running load tests"
+  deploy-prod: 
+      runs-on: ubuntu-latest
+      job: e2e-tests
+           load-tests
+      steps: 
+        - name: deploying to prod
+          run: echo "deploying to prod"
+      
+       
+         
