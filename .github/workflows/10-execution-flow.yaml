@@ -13,6 +13,7 @@ jobs:
           run: echo "linting and building project"
   unit-test: 
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
         - name: running unit tests
           run: echo "running unit tests"
