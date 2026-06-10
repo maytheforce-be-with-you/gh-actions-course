@@ -21,7 +21,7 @@ jobs:
             - name: Print GITHUB_OUTPUT path
               run: echo "$GITHUB_OUTPUT"
             - name: Build
-            - id: build
+              id: build
               run: echo "status=${{ inputs.build-status }}" >> $GITHUB_OUTPUT
            
     deploy:
