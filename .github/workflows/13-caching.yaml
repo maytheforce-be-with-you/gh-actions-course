@@ -20,7 +20,7 @@ jobs:
         runs-on: ubuntu-latest
         outputs:
             cache-key: ${{steps.install-deps.outputs.CACHE-KEY}}
-        default:
+        defaults:
             run:
                 working-directory: 13-caching/react-app
         steps:
