@@ -27,7 +27,12 @@ jobs:
                npm install
             - name: Testing
               run: |
-               npm run test
+               npm run test -- --coverage
+            - name: upload test files
+              uses: actions/upload-artifact@v4
+              with:
+                name: test coverage
+                path: 14-artifacts/react-app/coverage
             - name: building
               run: | 
                 npm run build
