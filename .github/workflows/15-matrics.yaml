@@ -1,0 +1,19 @@
+name: 15 matrics
+on: workflow_dispatch
+jobs:
+    
+    matrics-var: 
+        name: ${{matrix.os}} - ${{matrix.node}}
+        strategy: 
+            matrix: 
+                node: [19,20]
+                os:
+                    ubuntu-latest
+        runs-on: ${{matrix.os}}
+        steps:
+            - name: setup-node
+              uses: actions/setup-node@v3
+              with: 
+                 node-version: ${{matrix.node}}
+            - name: Perform tasks
+              run: echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node}}"
