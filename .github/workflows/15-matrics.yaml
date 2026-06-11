@@ -13,9 +13,11 @@ jobs:
                   - ubuntu-latest
                   - windows-latest
                 include:
-                    - os: ubuntu-latest
-                      tag: experimental
-                      node-version: '21.x'
+                    - os: ubuntu-lates
+                      node-version: '22.x'
+                    #- os: ubuntu-latest
+                    #  tag: experimental
+                    #  node-version: '21.x'
        
         steps:
             - name: setup-node
