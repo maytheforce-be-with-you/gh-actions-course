@@ -2,13 +2,13 @@ name: 15 matrics
 on: workflow_dispatch
 jobs:
     
-    matrics-var: 
-        name: ${{matrix.os}}-${{matrix.node}}
+    backwards-compatability:
         runs-on: ${{matrix.os}}
+        name: ${{matrix.os}}-${{matrix.node-version}}
         strategy: 
             fail-fast: true
             matrix: 
-                node: [19,20,21]
+                node-version: [19.x,20.x,21.x]
                 os:
                   - ubuntu-latest
                   - windows-latest
