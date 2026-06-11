@@ -3,7 +3,7 @@ on: workflow_dispatch
 jobs:
     
     matrics-var: 
-        name: ${{matrix.os}} - ${{matrix.node}}
+        name: ${{matrix.os}}-${{matrix.node}}
         strategy: 
             fast-fail: false
             matrix: 
@@ -23,7 +23,7 @@ jobs:
                  node-version: ${{matrix.node}}
 
             - name: fail if experimental
-              if: ${{os.tag == 'experimental'}}
+              if: ${{matrix.tag == 'experimental'}}
               run: exit 1
             - name: Perform tasks
               run: |
