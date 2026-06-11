@@ -37,7 +37,7 @@ jobs:
              
     include-example: 
       runs-on: ubuntu-latest
-      name: ${{matrix.color}}-${{matrix.shapes}}-${{matrix.size}}
+      name: ${{matrix.color}}-${{matrix.shapes}}-${{matrix.size}}-${{matrix.opacity}}
       strategy: 
         matrix: 
           color: 
