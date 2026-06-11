@@ -5,15 +5,29 @@ jobs:
     matrics-var: 
         name: ${{matrix.os}} - ${{matrix.node}}
         strategy: 
+            fast-fail: false
             matrix: 
                 node: [19,20]
                 os:
                   - ubuntu-latest
+                include:
+                    - os: ubuntu-latest
+                      tag: experimental
+                    - os: ubuntu-latest
+                      node-version: '21.x'
         runs-on: ${{matrix.os}}
         steps:
             - name: setup-node
               uses: actions/setup-node@v3
               with: 
                  node-version: ${{matrix.node}}
+
+            - name: fail if experimental
+              if: ${{os.tag == 'experimental'}}
+              run: exit 1
             - name: Perform tasks
-              run: echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node}}"
+              run: |
+                sleep 10
+                echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node}}"
+            - name: upload test results
+              run: echo "Upload test results"
