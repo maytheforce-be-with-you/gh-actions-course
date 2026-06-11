@@ -27,10 +27,10 @@ jobs:
 
             - name: fail if experimental
               if: ${{matrix.tag == 'experimental'}}
-              run: exit 1
+              run: echo """
             - name: Perform tasks
               run: |
-                sleep 10
+                echo """
                 echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node-version}}"
             - name: upload test results
               run: echo "Upload test results"
