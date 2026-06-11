@@ -34,3 +34,25 @@ jobs:
                 echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node-version}}"
             - name: upload test results
               run: echo "Upload test results"
+             
+    include-example: 
+      runs-on: ubuntu-latest
+      name: ${{matrix.color}}-${{matrix.shapes}}-${{matrix.size}}
+      strategy: 
+        matrix: 
+          color: 
+            - red
+            - blue
+            - green
+          shapes:
+            - circle
+            - square
+          size: 
+            - small 
+            - large
+          include:
+            - color: red
+              shape: triangle
+      steps:
+        - name: Dummy Step
+          run: echo "Color ${{matrix.color}} shapes ${{matrix.shapes}} size ${{matrix.size}}"
