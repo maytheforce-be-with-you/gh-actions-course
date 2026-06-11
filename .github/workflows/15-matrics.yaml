@@ -4,6 +4,7 @@ jobs:
     
     matrics-var: 
         name: ${{matrix.os}}-${{matrix.node}}
+        runs-on: ${{matrix.os}}
         strategy: 
             fast-fail: false
             matrix: 
@@ -15,7 +16,7 @@ jobs:
                       tag: experimental
                     - os: ubuntu-latest
                       node-version: '21.x'
-        runs-on: ${{matrix.os}}
+       
         steps:
             - name: setup-node
               uses: actions/setup-node@v3
