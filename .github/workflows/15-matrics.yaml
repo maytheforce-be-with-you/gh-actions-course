@@ -51,8 +51,9 @@ jobs:
             - small 
             - large
           include:
-            - color: red
+            - opacity: 50
+              color: red
               shapes: triangle
       steps:
         - name: Dummy Step
-          run: echo "Color ${{matrix.color}} shapes ${{matrix.shapes}} size ${{matrix.size}}"
+          run: echo "Color ${{matrix.color}} shapes ${{matrix.shapes}} size ${{matrix.size}} opacity ${{matrix.opacity}}"
