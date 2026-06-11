@@ -52,7 +52,7 @@ jobs:
             - large
           include:
             - color: red
-              shape: triangle
+              shapes: triangle
       steps:
         - name: Dummy Step
           run: echo "Color ${{matrix.color}} shapes ${{matrix.shapes}} size ${{matrix.size}}"
