@@ -21,7 +21,7 @@ jobs:
             - name: setup-node
               uses: actions/setup-node@v3
               with: 
-                 node-version: ${{matrix.node}}
+                 node-version: ${{matrix.node-version}}
 
             - name: fail if experimental
               if: ${{matrix.tag == 'experimental'}}
@@ -29,6 +29,6 @@ jobs:
             - name: Perform tasks
               run: |
                 sleep 10
-                echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node}}"
+                echo "Running tests on OS ${{matrix.os}} and NodeJS ${{matrix.node-version}}"
             - name: upload test results
               run: echo "Upload test results"
