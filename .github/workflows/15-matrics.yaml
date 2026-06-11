@@ -58,6 +58,6 @@ jobs:
                 opacity: 100
               - color: red
                 shape: triangle
-        steps:
+      steps:
           - name: Dummy Step
             run: echo "Color ${{matrix.color}} shapes ${{matrix.shapes}} size ${{matrix.size}} opacity ${{matrix.opacity}}"
