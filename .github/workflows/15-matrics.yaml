@@ -6,7 +6,7 @@ jobs:
         runs-on: ${{matrix.os}}
         name: ${{matrix.os}}-${{matrix.node-version}}
         strategy: 
-            fail-fast: true
+            fail-fast: false
             matrix: 
                 node-version: [19.x,20.x,21.x]
                 os:
