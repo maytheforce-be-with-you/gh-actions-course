@@ -17,7 +17,7 @@ jobs:
         environment: E2E-Tests
         env: 
             my-env-value: ${{vars.MY_ENV_VALUE || 'defaultvalue' }}
-        needs: staging
+        needs: deploy-staging
         steps:
           - name: echo vars
             run: echo "E2e TEsts ${{env.my-env-value}}"
@@ -26,7 +26,7 @@ jobs:
         environment: Prod
         env: 
             my-env-value: ${{vars.MY_ENV_VALUE || 'defaultvalue' }}
-        needs: E2e-tests
+        needs: E2E-tests
         steps:
           - name: echo vars
             run: echo "prod ${{env.my-env-value}}"
