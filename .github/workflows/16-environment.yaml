@@ -13,7 +13,7 @@ jobs:
         environment: ${{inputs.tar-env}}
         env: 
             my-env-value: ${{vars.tar-env || 'defaultvalue' }}
-            steps:
-                - name: echo vars
-                  run: echo "vars ${{vars.tar-env}}"
+        steps:
+          - name: echo vars
+            run: echo "vars ${{vars.tar-env}}"
 
