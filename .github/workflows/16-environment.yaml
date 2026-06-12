@@ -1,11 +1,7 @@
 name: 16 working with environments
 on:
   workflow_dispatch:
-      inputs:
-        tar-env:
-            type:
-                environment
-            default: staging
+      
 run-name: 16 environment ${{inputs.tar-env}} 
 jobs:
     deploy-staging:
