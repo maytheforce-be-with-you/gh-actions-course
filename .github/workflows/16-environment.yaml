@@ -30,3 +30,12 @@ jobs:
         steps:
           - name: echo vars
             run: echo "prod ${{env.my-env-value}}"
+    deploy-prod-fE:
+        runs-on: ubuntu-latest
+        environment: Prod
+        env: 
+            my-env-value: ${{vars.MY_ENV_VALUE || 'defaultvalue' }}
+        needs: E2E-tests
+        steps:
+          - name: echo vars
+            run: echo "E2e TEsts ${{env.my-env-value}}"
