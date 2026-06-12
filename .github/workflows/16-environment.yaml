@@ -16,21 +16,21 @@ jobs:
         steps:
           - name: echo vars
             run: echo "staging ${{env.my-env-value}}"
-    E2E tests:
+    E2E-tests:
         runs-on: ubuntu-latest
-        environment: E2E Tests
+        environment: E2E-Tests
         env: 
             my-env-value: ${{vars.MY_ENV_VALUE || 'defaultvalue' }}
         needs: staging
         steps:
           - name: echo vars
-            run: echo "E2e TEsts ${{env.my-env-value}}
+            run: echo "E2e TEsts ${{env.my-env-value}}"
     deploy-prod:
         runs-on: ubuntu-latest
         environment: Prod
         env: 
             my-env-value: ${{vars.MY_ENV_VALUE || 'defaultvalue' }}
-        needs: E2e tests
+        needs: E2e-tests
         steps:
           - name: echo vars
             run: echo "prod ${{env.my-env-value}}"
