@@ -19,7 +19,7 @@ runs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: ${{inputs.working-directory}}/node-modules
+          path: ${{inputs.working-directory}}/node_modules
           key: node-modules-${{hashFiles(format( '{0}/{1}' , inputs.working-directory , '/package-lock.json'))}}
       - name:  install-dependencies
         if: steps.cache.outputs.cache-hit != 'true'
