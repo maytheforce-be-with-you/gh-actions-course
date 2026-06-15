@@ -6,7 +6,7 @@ inputs:
     default: '20.x'
   working-directory:
     description: The working directory of the application
-    default: '.github/actions/composite-cache-deps/'
+    default: .
 runs:
   using: composite
   steps: 
@@ -19,8 +19,8 @@ runs:
         id: cache
         uses: actions/cache@v3
         with:
-          key: ${{inputs.working-directory}}/node-modules
-          path: node-modules-${{hashFiles('${{inputs.working-directory}}/package-lock.json')}}
+          path: ${{inputs.working-directory}}/node-modules
+          key: node-modules-${{hashFiles('${{inputs.working-directory}}/package-lock.json')}}
       - name:  install-dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
