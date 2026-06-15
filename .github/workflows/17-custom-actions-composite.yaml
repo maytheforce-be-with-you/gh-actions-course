@@ -10,7 +10,7 @@ on:
 run-name: "17-1- custom-actions-composite | Env: ${{inputs.target-env}}"
  
 env: 
-  working_directory: 17-custom-actions/react-app
+  working-directory: 17-custom-actions/react-app
 
 jobs:
   build:
