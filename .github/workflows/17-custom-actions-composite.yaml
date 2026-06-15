@@ -19,6 +19,8 @@ jobs:
       run: 
         working-directory: ${{env.working-directory}}
     steps:
+        - name: test names
+          run: echo "path ${{env.working-directory}}"
         - uses: actions/checkout@v3
         - name: setup npm dependencies
           uses: ./.github/actions/composite-cache-deps
