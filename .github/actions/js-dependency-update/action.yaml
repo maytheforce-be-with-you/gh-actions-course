@@ -1,5 +1,5 @@
 name: Update NPM dependencies
-description: : Checks if there are updates to NPM packages, and creates a PR with the updated package*.json files
+description: Checks if there are updates to NPM packages, and creates a PR with the updated package*.json files
 inputs:
   base-branch:
     description: The branch used as the base for the dependency update checks
