@@ -4,7 +4,7 @@ on:
       inputs:
         base-branch:
          type: string
-         default: main
+         default: 'main'
         target-branch:
           type: string
           default: update-dependencies
