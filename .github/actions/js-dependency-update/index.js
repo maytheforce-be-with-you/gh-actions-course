@@ -8,7 +8,7 @@ async function run(){
     core.info('I am a custom js function');
     const baseBranch = core.getInput('base-branch');
     const targetBranch = core.getInput('target-branch');
-    const workDir = core.getInput('working-dir');
+    const workDir = core.getInput('working-directory');
     const debug = core.getBooleanInput('debug');
     const ghToken = core.getInput('gh-token');
 
