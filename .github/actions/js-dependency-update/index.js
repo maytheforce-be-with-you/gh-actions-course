@@ -14,6 +14,8 @@ async function run(){
 
     core.setSecret('ghToken')
 
+    core.info(`Base branch received: "${baseBranch}"`);
+
     if(!validateBranchName({branchName: baseBranch})){
         core.setFailed('invalid base-branch name')
         return;
