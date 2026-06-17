@@ -9,7 +9,7 @@ inputs:
   max_trails:
     description: max no of trials until the action fails.
     default: '10'
-    required: false 
+    required: true
   delay:
     description: delay in seconds between trials
     default: '5'
