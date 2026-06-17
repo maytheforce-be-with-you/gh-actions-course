@@ -5,15 +5,18 @@ on:
         base-branch:
          type: string
          default: 'main'
-        target-branch:
+        head-branch:
           type: string
           default: update-dependencies
         working-dir:
           type: string
           default: 17-custom-actions/react-app
+        debug:
+          type: boolean
+          default: false
         
           
-run-name: Custom actions- JS | BB ${{inputs.base-branch}} | TB ${{inputs.target-branch}} | WD ${{inputs.working-dir}}
+run-name: Custom actions- JS | BB ${{inputs.base-branch}} | TB ${{inputs.head-branch}} | WD ${{inputs.working-dir}}
 permissions: 
   contents: write
   pull-requests: write
@@ -26,6 +29,7 @@ jobs:
           uses: ./.github/actions/js-dependency-update
           with: 
             base-branch: ${{inputs.base-branch}}
-            target-branch: ${{inputs.target-branch}}
+            head-branch: ${{inputs.head-branch}}
             working-directory: ${{inputs.working-dir}}
             gh-token: ${{ secrets.GITHUB_TOKEN}}
+            debug: ${{ inputs.debug }}
