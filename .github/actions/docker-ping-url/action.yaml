@@ -1,0 +1,20 @@
+name: ping url
+description: ping url until maximum trial has exceed
+
+inputs:
+  url: 
+    description: URL to ping
+    required: true
+
+  max_trails:
+    description: : max no of trials until the action fails.
+    default: '10'
+    required: false 
+  delay:
+    description: delay in seconds between trials
+    default: '5'
+    required: false
+
+runs: 
+  using: Docker
+  image: Dockerfile
