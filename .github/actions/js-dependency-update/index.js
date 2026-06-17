@@ -40,28 +40,28 @@ async function run(){
     core.info('[js-dependency-update]: base branch is ${workDir}');
 
 
-    await exec.exec('npm update', [],{
+    await exec.exec(`npm update`, [],{
         ...commonExecOps
     });
 
-    const gitStatus = await exec.getExecOutput(' git status -s package*.json', [],{
+    const gitStatus = await exec.getExecOutput(`git status -s package*.json`, [],{
         ...commonExecOps,
     });
 
     if(gitStatus.stdout.length > 0){
         core.info('update available')
-        await exec.exec('git config --global user.name "gh-automation"')
-        await exec.exec('git config --global user.email "gh-automation@email.com"')
-        await exec.exec('git checkout -b ${targetBranch}',[],{
+        await exec.exec(`git config --global user.name "gh-automation"`)
+        await exec.exec(`git config --global user.email "gh-automation@email.com"`)
+        await exec.exec(`git checkout -b ${targetBranch}`,[],{
             ...commonExecOps
         });
-         await exec.exec('git add package.json package-lock.json',[],{
+         await exec.exec(`git add package.json package-lock.json`,[],{
             ...commonExecOps
         });
-         await exec.exec('git commit -m "chore(updated-dependencies"',[],{
+         await exec.exec(`git commit -m "chore(updated-dependencies)"`,[],{
             ...commonExecOps
         });
-         await exec.exec('git push -u origin ${targetBranch} --force ',[],{
+         await exec.exec(`git push -u origin ${targetBranch} --force `,[],{
             ...commonExecOps
         });
 
