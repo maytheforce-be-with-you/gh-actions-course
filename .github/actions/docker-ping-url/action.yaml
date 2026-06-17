@@ -7,7 +7,7 @@ inputs:
     required: true
 
   max_trails:
-    description: : max no of trials until the action fails.
+    description: max no of trials until the action fails.
     default: '10'
     required: false 
   delay:
@@ -16,5 +16,5 @@ inputs:
     required: false
 
 runs: 
-  using: Docker
+  using: docker
   image: Dockerfile
