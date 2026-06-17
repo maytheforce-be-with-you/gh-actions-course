@@ -5,12 +5,15 @@ on:
         url:
          type: string
          default: 'https://www.google.com'
-      
+        max_trails:
+         description: max no of trials until the action fails.
+         default: '10'
+         required: false 
+        delay:
+          description: delay in seconds between trials
+          default: '5'
+          required: false
         
-          
-permissions: 
-  contents: write
-  pull-requests: write
 jobs:
     ping-url:
         runs-on: ubuntu-latest
@@ -20,4 +23,6 @@ jobs:
           uses: ./.github/actions/docker-ping-url
           with: 
             url: ${{inputs.url}}
+            delay: ${{inputs.delay}}
+            max_trails: ${{inputs.max_trails}}
             
