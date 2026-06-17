@@ -61,7 +61,7 @@ async function run(){
          await exec.exec('git commit -m "chore(updated-dependencies"',[],{
             ...commonExecOps
         });
-         await exec.exec('git push -u origin ${targerBranch} --force ',[],{
+         await exec.exec('git push -u origin ${targetBranch} --force ',[],{
             ...commonExecOps
         });
 
