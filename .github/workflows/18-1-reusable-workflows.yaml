@@ -1,12 +1,12 @@
 name: 18 1 Reusable workflows - Defination
 on: 
   workflow_call:
-    input:  
+    inputs:  
       target_directory:
         type: string
         required: true
 
-    output:             
+    outputs:             
         build-status:
               description: status of build process
               value: ${{jobs.deploy.outputs.build-status}}
@@ -31,4 +31,4 @@ jobs:
       - name: deploy
         run: | 
           echo "deploying artifacts"
-          echo "url=https://www.google.com" 
+          echo "url=https://www.google.com" >> "GITHUB_OUTPUT"
