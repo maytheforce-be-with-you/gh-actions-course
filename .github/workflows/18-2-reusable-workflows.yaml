@@ -7,7 +7,7 @@ jobs:
   deploy: 
     uses: ./.github/workflows/18-1-reusable-workflows.yaml 
     with:
-     target_dir: dummy_dir
+     target_directory: dummy_dir
 
   print-output:
     runs-on: ubuntu-latest
